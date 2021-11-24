@@ -48,6 +48,7 @@ function kirimTelegram($pesan){
 }
 $kirimPesan = json_decode(file_get_contents("https://api.bingbon.com/api/v1/market/symbols"), TRUE); 
 for($i=0; $i<47; $i++){
+    $nomor = $i+1;
     $asset = $kirimPesan['data']['result'][$i]['base_currency'];
     $pair = $kirimPesan['data']['result'][$i]['quote_currency'];
     $tesPesan = $kirimPesan['data']['result'][$i]['last_price'];
@@ -55,7 +56,7 @@ for($i=0; $i<47; $i++){
     $tesPesan2 = $kirimPesan['data']['result'][$i]['low'];
     $lasthigh = $tesPesan1-$tesPesan;
     $lastlow = $tesPesan-$tesPesan2;
-    $tb .="Nomor : ".$i. "%0aAsset : ".$asset. 
+    $tb .="Nomor : ".$nomor. "%0aAsset : ".$asset. 
                 "_". $pair. 
                 "%0aLast Price : ".$tesPesan.
                 "%0aHigh : ". $tesPesan1.
@@ -63,9 +64,27 @@ for($i=0; $i<47; $i++){
                 "%0aLast-high : ". $lasthigh.
                 "%0aLast-Low  : ". $lastlow.
                 "%0a%0a%0a";      
-    if($i == 45){
+    if($i == 32){
+        for ($j=33; $j < 46; $j++) { 
+            $nomor = $j +1;
+            $asset = $kirimPesan['data']['result'][$j]['base_currency'];
+            $pair = $kirimPesan['data']['result'][$j]['quote_currency'];
+            $tesPesan = $kirimPesan['data']['result'][$j]['last_price'];
+            $tesPesan1 = $kirimPesan['data']['result'][$j]['high'];
+            $tesPesan2 = $kirimPesan['data']['result'][$j]['low'];
+            $lasthigh = $tesPesan1-$tesPesan;
+            $lastlow = $tesPesan-$tesPesan2;
+            $ta .="Nomor : ".$nomor. "%0aAsset : ".$asset. 
+                        "_". $pair. 
+                        "%0aLast Price : ".$tesPesan.
+                        "%0aHigh : ". $tesPesan1.
+                        "%0aLow : ". $tesPesan2.
+                        "%0aLast-high : ". $lasthigh.
+                        "%0aLast-Low  : ". $lastlow.
+                        "%0a%0a%0a";
+        }
         kirimTelegram($tb);
+        kirimTelegram($ta);
     }
 }
-// iki tinggal buat fungsi yaopo carae isok ngirim keseluruhan jadi 1 langsung, ora print 1 1 pake loop
 ?>
