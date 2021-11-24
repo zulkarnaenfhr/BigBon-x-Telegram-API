@@ -55,15 +55,17 @@ for($i=0; $i<47; $i++){
     $tesPesan2 = $kirimPesan['data']['result'][$i]['low'];
     $lasthigh = $tesPesan1-$tesPesan;
     $lastlow = $tesPesan-$tesPesan2;
-    $tb .= "Asset : ".$asset. 
+    $tb .="Nomor : ".$i. "%0aAsset : ".$asset. 
                 "_". $pair. 
                 "%0aLast Price : ".$tesPesan.
                 "%0aHigh : ". $tesPesan1.
                 "%0aLow : ". $tesPesan2.
                 "%0aLast-high : ". $lasthigh.
                 "%0aLast-Low  : ". $lastlow.
-                "%0a%0a%0a";         
+                "%0a%0a%0a";      
+    if($i == 45){
+        kirimTelegram($tb);
+    }
 }
-$tb = "Hla";
-kirimTelegram($tb);
+// iki tinggal buat fungsi yaopo carae isok ngirim keseluruhan jadi 1 langsung, ora print 1 1 pake loop
 ?>
