@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a id="navbar-menu" class="nav-link active" aria-current="page" href="#">Message status bot telegram</a>
+                        <a id="navbar-menu" class="nav-link active" aria-current="page" href="sendNotificationMaster.php">Message status bot telegram</a>
                     </li>
                 </ul>
             </div>
@@ -44,7 +44,7 @@
         <section id="liveMarket">
             <div class="container-fluid">
                 <div class="container">
-                    <p class="liveMarket-Title">Cryptocurrency Live Market using Bigbon API</p>
+                    <p class="liveMarket-Title">Cryptocurrency x Bigbon API Homepage</p>
                     <div class="row">
                         <div class="col-6 indicatorLeftSection">
                             <p><span class="liveMarket-Time" id="date"></span> <span class="liveMarket-Time"
@@ -54,7 +54,7 @@
                             </p>
                         </div>
                         <div class="col-6 indicatorRightSection">
-                            <a href="">
+                            <a href="liveCryptoMarket.html">
                                 <button class="spaceCaptButton">View Live Market</button>
                             </a>
                         </div>
@@ -64,7 +64,7 @@
                             <th class="tableNomor">No</th>
                             <th class="tableAsset">Asset</th>
                             <th class="tablePair">Pair</th>
-                            <th class="tableLast">Last</th>
+                            <th class="tableLast">Last Price</th>
                             <th class="tableHigh">High</th>
                             <th class="tableLow">Low</th>
                             <th class="tableLastLow">H-Last</th>
