@@ -96,13 +96,13 @@
                             <th class="tableBawah">
                                 <?php 
                                     $isLastLow = $row["high"] - $row["last_price"];
-                                    echo number_format($isLastLow,2);
+                                    echo number_format($isLastLow,4);
                                 ?>
                             </th>
                             <th class="tableBawah">
                                 <?php 
                                     $isLastHigh = $row["last_price"] - $row["low"];
-                                    echo number_format($isLastHigh,2);
+                                    echo number_format($isLastLow,4);
                                 ?>
                             </th>
                         </tr>

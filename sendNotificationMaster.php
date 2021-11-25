@@ -15,7 +15,7 @@ function kirimTelegram($pesan){
     return $result;
 }
 $kirimPesan = json_decode(file_get_contents("https://api.bingbon.com/api/v1/market/symbols"), TRUE); 
-for($i=0; $i<47; $i++){
+for($i=0; $i<48; $i++){
     $nomor = $i+1;
     $asset = $kirimPesan['data']['result'][$i]['base_currency'];
     $pair = $kirimPesan['data']['result'][$i]['quote_currency'];
@@ -33,7 +33,7 @@ for($i=0; $i<47; $i++){
                 "%0aLast-Low  : ". $lastlow.
                 "%0a%0a%0a";      
     if($i == 32){
-        for ($j=33; $j < 46; $j++) { 
+        for ($j=33; $j < 48; $j++) { 
             $nomor = $j +1;
             $asset = $kirimPesan['data']['result'][$j]['base_currency'];
             $pair = $kirimPesan['data']['result'][$j]['quote_currency'];

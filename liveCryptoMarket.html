@@ -102,10 +102,10 @@
                                             tableLastHigh = document.getElementById("tableLastHigh" + i)
 
                                             let isLastHigh = data.data.result[i].high - data.data.result[i].last_price;
-                                            isLastHigh = isLastHigh.toFixed(2);
+                                            isLastHigh = isLastHigh.toFixed(4);
 
                                             let isLastLow = data.data.result[i].last_price - data.data.result[i].low;
-                                            isLastLow = isLastLow.toFixed(2);
+                                            isLastLow = isLastLow.toFixed(4);
 
                                             tableNomor.innerHTML = `${i}`;
                                             tableAsset.innerHTML = `${data.data.result[i].base_currency}`;
