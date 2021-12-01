@@ -1,9 +1,9 @@
 <?php
 $content = file_get_contents("php://input");
 if($content){
-    $token = '2114872958:AAEpeTVx9Mi3G-r_W1i0P-G_mrt6WlPVE1Q';
+    $token = '2114872958:AAG3bepNzPLeJrteJXnHkGVyC50xfhUYnbE';
     
-    $apiLink = "https://api.telegram.org/bot$token/%22";  
+    $apiLink = "https://api.telegram.org/bot$token/";  
     
     echo '<pre>content = '; print_r($content); echo '</pre>';
     $update = json_decode($content, true);
@@ -14,9 +14,9 @@ if($content){
     $text = $val['message']['text'];
     $update_id = $val['update_id'];
     $sender = $val['message']['from'];
-    ?>
+    ?>10april
     <?php 
-    $data = json_decode(file_get_contents("https://api.bingbon.com/api/v1/market/symbols%22")  , TRUE);
+    $data = json_decode(file_get_contents("https://api.bingbon.com/api/v1/market/symbols")  , TRUE);
     $a = 1;
     if($text==="/view"){
         $msg .= "Bot Developed by Kelompok API 7!%0a%0a%0a";
@@ -114,6 +114,10 @@ if($content){
     }
     file_get_contents($apiLink . "sendmessage?chat_id=$chat_id&text=".$tb."...");
     }
+    if ($text==="/fahri") {
+        $msg .= "Halo Fahri";
+    }
+    file_get_contents($apiLink. "sendmessage?chat_id=$chat_id&text=".$msg);
     echo 'Response sent.<br /><br />';
 } else echo 'Only telegram can access this url.';
 ?>
